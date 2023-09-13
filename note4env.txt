@@ -1,0 +1,37 @@
+1 Setup the virtual env
+- make the folder auth_2FA_gmail then open the command line
+cd auth_2FA_gmail
+pipenv shell 
+code .
+- ctrl + shef + P : select interpreter -> copy the folder from the pipenv shell (the vitual path)
+- Virtualenv location: C:\Users\trung\.virtualenvs\auth_2FA_gmail-0K5YhrB7\python.exe
+
+2 Set up the django and packages
+pipenv install django 
+django-admin startproject auth_2FA_gmail .
+django_admin startapp core 
+pipenv install mysqlclient
+pipenv install djangorestframework
+
+
+3 settings.py
+
+Setup and connect the db
+- install mysql
+- create dtabase test
+- go to the settings.py 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'HOST':'localhost',
+        'USER':'root',
+        'PASSWORD':'goldenview' 
+    }
+}
+
+INSTALLED_APPS = [
+    'rest_frameowkr',
+    'core'
+]
