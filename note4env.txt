@@ -10,8 +10,23 @@ code .
 pipenv install django 
 django-admin startproject auth_2FA_gmail .
 django_admin startapp core 
+
 pipenv install mysqlclient
 pipenv install djangorestframework
+pipenv install jwt
+
+pipenv install django-cors-headers
+    # -> goto setting and add 
+    INSTALLED_APPS = {
+        'corsheader',
+    }
+
+    MIDDLEWARE = {
+        'corsheaders.middleware.CorsMiddleware',
+    }
+
+    CORS_ORIGIN_ALLOW_ALL = True 
+    CORS_ALLOW_CREDENTIALS = True 
 
 
 3 settings.py
